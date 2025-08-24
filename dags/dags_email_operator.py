@@ -1,7 +1,7 @@
-from airflow import DAG
+from airflow.sdk import DAG
 import pendulum
 import datetime
-from airflow.operators.email import EmailOperator
+from airflow.providers.stmp.operators.stmp import EmailOperator
 
 with DAG(
     dag_id="dags_email_operator",
@@ -11,6 +11,7 @@ with DAG(
 )as dag:
     send_email_task = EmailOperator(
         task_id = 'send_emil_task',
+        conn_id='conn_stmp_gmail',
         to='us999704@gmail.com',
         subject='Airflow 성공메일',
         html_content='Airflow 작업이 완료되었습니다'
