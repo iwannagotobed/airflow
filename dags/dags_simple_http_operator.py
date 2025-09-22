@@ -16,7 +16,7 @@ with DAG(
     tb_cycle_station_info = HttpOperator(
         task_id='tb_cycle_station_info',
         http_conn_id='test_connection',
-        endpoint='{{var.value.api_key_openai_seoul_go_kr}}/json/tbCycleStationInfo/1/10',
+        endpoint='/{{var.value.api_key_openai_seoul_go_kr}}/json/tbCycleStationInfo/1/10',
         method='GET',
         headers={'Content-Type': 'application/json',
                  'charset': 'utf-8',
