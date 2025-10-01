@@ -5,7 +5,6 @@ from airflow.operators.bash import BashOperator
 from airflow.exceptions import AirflowException
 from datetime import datetime
 
-
 import pendulum
 
 with DAG(
